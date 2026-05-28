@@ -7,6 +7,50 @@
   <meta name="description" content="Full Stack Developer building scalable web apps, fintech platforms, CRM dashboards, and travel solutions using React, Next.js, Node.js, Laravel, Django, and SQL/NoSQL." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Custom Cursor */
+    .custom-cursor, .custom-cursor-ring {
+      position: fixed; left: 0; top: 0; pointer-events: none; z-index: 2000; transform: translate(-50%, -50%);
+      will-change: transform, width, height, opacity;
+      mix-blend-mode: difference;
+    }
+    .custom-cursor {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff 0%, var(--accent) 60%, transparent 100%);
+      box-shadow: 0 0 12px var(--accent), 0 0 24px var(--accent-light);
+      transition: transform .08s ease-out;
+    }
+    .custom-cursor-ring {
+      width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent-light);
+      transition: width .2s, height .2s, opacity .2s;
+    }
+    .custom-cursor--hidden, .custom-cursor-ring--hidden { opacity: 0; }
+    .custom-cursor--hover { transform: translate(-50%, -50%) scale(0.9); }
+    /* Light mode variables */
+    :root.light {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-card: #fff;
+      --text-primary: #18181b;
+      --text-secondary: #52525b;
+      --border-color: #e5e7eb;
+      --accent: #2563eb;
+      --accent-light: #60a5fa;
+      --accent-green: #22c55e;
+      --accent-purple: #a78bfa;
+      --shadow-lg: 0 20px 60px rgba(59,130,246,0.08);
+    }
+    .theme-toggle {
+      position: fixed; top: 18px; right: 24px; z-index: 3000;
+      background: var(--bg-card); color: var(--accent); border: 1px solid var(--border-color);
+      border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; font-size: 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .theme-toggle:hover { background: var(--accent-light); color: #fff; }
+    @media (max-width: 600px) { .theme-toggle { top: 10px; right: 10px; } }
+  </style>
   <style>
     /* Reset */
     *, *::before, *::after { box-sizing: border-box; }
@@ -216,10 +260,10 @@
       100% { opacity: 0.7; transform: scale(1.05); }
     }
     .image-wrapper {
-      width: 380px; height: 380px; border-radius: 50%; overflow: hidden;
+      width: 400px; height: 400px; border-radius: 50%; overflow: hidden;
       position: relative; padding: 4px;
       background: var(--gradient-primary);
-      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      
       transition: transform 0.3s ease;
     }
     .image-wrapper:hover { transform: scale(1.02); }
@@ -475,6 +519,9 @@
   </style>
 </head>
 <body>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">🌙</button>
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Navigation -->
@@ -524,7 +571,7 @@
             <span>Get in Touch</span>
           </a>
           <div class="social-icons">
-            <a href="https://www.linkedin.com/in/devendrapratap/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/devendrapratap/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a href="https://github.com/devendrapratapsinghsolanki" target="_blank" rel="noopener" class="social-icon" title="GitHub" aria-label="GitHub">
@@ -794,13 +841,58 @@
           </p>
           
           <div class="contact-cards" role="list">
-            <a role="listitem" href="mailto:dt9761233@email.com" class="contact-card" aria-label="Email">
+            <a role="listitem" href="mailto:dt9761233@email.com" class="contact-card contact-action" aria-label="Email">
               <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
-              <span>dt9761233@email.com</span>
+              <span>pratpdevendr@gmail.com</span>
             </a>
-            <a role="listitem" href="tel:+918869077580" class="contact-card" aria-label="Phone">
+            <a role="listitem" href="tel:+918869077580" class="contact-card contact-action" aria-label="Phone">
+                <script>
+                  // Theme toggle
+                  const themeBtn = document.getElementById('theme-toggle');
+                  const root = document.documentElement;
+                  function setTheme(light) {
+                    if (light) {
+                      root.classList.add('light');
+                      themeBtn.textContent = '🌞';
+                    } else {
+                      root.classList.remove('light');
+                      themeBtn.textContent = '🌙';
+                    }
+                  }
+                  themeBtn.addEventListener('click', () => {
+                    const isLight = !root.classList.contains('light');
+                    setTheme(isLight);
+                    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+                  });
+                  // On load
+                  if (localStorage.getItem('theme') === 'light') setTheme(true);
+
+                  // Custom cursor
+                  const cursor = document.getElementById('custom-cursor');
+                  const ring = document.getElementById('custom-cursor-ring');
+                  document.addEventListener('mousemove', e => {
+                    cursor.style.left = ring.style.left = e.clientX + 'px';
+                    cursor.style.top = ring.style.top = e.clientY + 'px';
+                  });
+                  document.addEventListener('mousedown', () => {
+                    cursor.classList.add('custom-cursor--hover');
+                    ring.style.transform = 'scale(0.8)';
+                  });
+                  document.addEventListener('mouseup', () => {
+                    cursor.classList.remove('custom-cursor--hover');
+                    ring.style.transform = '';
+                  });
+                  document.querySelectorAll('a,button,.contact-action').forEach(el => {
+                    el.addEventListener('mouseenter', () => ring.style.borderColor = 'var(--accent)');
+                    el.addEventListener('mouseleave', () => ring.style.borderColor = 'var(--accent-light)');
+                  });
+                  // Hide cursor on mobile
+                  if (window.matchMedia('(pointer: coarse)').matches) {
+                    cursor.style.display = ring.style.display = 'none';
+                  }
+                </script>
               <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
@@ -834,7 +926,7 @@
         <a href="https://github.com/devendrapratapsinghsolanki/ai-powered-issue-tracker" target="_blank" rel="noopener">AI Issue Tracker</a>
         <a href="https://github.com/devendrapratapsinghsolanki/travel-booking-management-system" target="_blank" rel="noopener">Travel Booking</a>
         <a href="devendra_fullstack_resume.pdf" download>Resume</a>
-        <a href="mailto:dt9761233@email.com">Email</a>
+        <a href="mailto:pratpdevendr@gmail.com">Email</a>
       </div>
     </div>
   </footer>

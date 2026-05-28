@@ -586,6 +586,7 @@ section {
     flex-wrap: wrap;
 }
 
+
 .contact-card {
     display: flex;
     align-items: center;
@@ -598,10 +599,33 @@ section {
     text-decoration: none;
     transition: all 0.3s ease;
 }
-
-.contact-card:hover {
+.contact-card:hover, .contact-action:focus {
     border-color: var(--accent);
     transform: translateY(-2px);
+    background: var(--accent);
+    color: #fff;
+}
+.contact-action {
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+    outline: none;
+}
+.contact-action:active {
+    background: var(--accent-light);
+    color: #fff;
+}
+
+/* Light mode overrides */
+:root.light .contact-card {
+    background-color: #fff;
+    color: #18181b;
+    border: 1px solid #e5e7eb;
+}
+:root.light .contact-card:hover, :root.light .contact-action:focus {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
 }
 
 .contact-card svg {
