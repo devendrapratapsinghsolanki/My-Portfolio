@@ -15,9 +15,15 @@
     --border-color: #2a2a2d;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-primary);
+    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.16), transparent 30%),
+                var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
 }
@@ -100,6 +106,8 @@ body {
     display: flex;
     align-items: center;
     padding-top: 80px;
+    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.08), transparent 26%),
+                radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.08), transparent 24%);
 }
 
 .hero-container {
@@ -236,6 +244,17 @@ section {
     font-size: 36px;
     font-weight: 700;
     margin: 12px 0 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 84px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-green));
+    border-radius: 999px;
+    margin-top: 16px;
 }
 
 /* About Section */

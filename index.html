@@ -1,1051 +1,846 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devendra Pratap Singh | Software Engineer & Full-Stack Developer</title>
-    <style>
-        /* Your CSS styles here */
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --bg-primary: #0a0a0b;
-    --bg-secondary: #141416;
-    --bg-card: #1a1a1d;
-    --text-primary: #ffffff;
-    --text-secondary: #9ca3af;
-    --accent: #3b82f6;
-    --accent-green: #22c55e;
-    --border-color: #2a2a2d;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-/* Navigation */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(10, 10, 11, 0.9);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text-primary);
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-.logo .dot {
-    color: var(--accent);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--text-primary);
-}
-
-.btn-resume {
-    background-color: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent) !important;
-    padding: 8px 20px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.btn-resume:hover {
-    background-color: var(--accent);
-    color: var(--text-primary) !important;
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 80px;
-}
-
-.hero-container {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-}
-
-.hero-content {
-    flex: 1;
-    max-width: 600px;
-}
-
-.hero-tag {
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.hero-title {
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 16px 0;
-}
-
-.hero-title .dot {
-    color: var(--accent);
-}
-
-.hero-tagline {
-    font-size: 30px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-}
-
-.hero-description {
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 500px;
-    margin-bottom: 32px;
-}
-
-.hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.btn-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--text-primary);
-    color: var(--bg-primary);
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-download:hover {
-    background-color: #e5e5e5;
-    transform: translateY(-2px);
-}
-
-.social-icons {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.social-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-2px);
-}
-
-.hero-image {
-    flex-shrink: 0;
-}
-
-.image-wrapper {
-    width: 400px;
-    height: 550px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 3px solid var(--border-color);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-}
-
-.profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Section Styles */
-section {
-    padding: 80px 0;
-}
-
-.section-tag {
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.section-title {
-    font-size: 36px;
-    font-weight: 700;
-    margin: 12px 0 40px;
-}
-
-/* About Section */
-.about {
-    background-color: var(--bg-secondary);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-}
-
-.education-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.edu-card {
-    background-color: var(--bg-card);
-    padding: 20px;
-    border-radius: 12px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    border: 1px solid var(--border-color);
-}
-
-.edu-icon {
-    width: 44px;
-    height: 44px;
-    background-color: var(--bg-secondary);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent);
-    flex-shrink: 0;
-}
-
-.edu-content h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.edu-content p {
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-.edu-year {
-    font-size: 13px;
-    color: var(--accent);
-    font-weight: 500;
-}
-
-.certifications-card {
-    background-color: var(--bg-card);
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    height: fit-content;
-}
-
-.cert-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    color: var(--text-primary);
-}
-
-.cert-header h3 {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.cert-list {
-    list-style: none;
-}
-
-.cert-list li {
-    padding: 10px 0;
-    color: var(--text-secondary);
-    font-size: 14px;
-    position: relative;
-    padding-left: 20px;
-}
-
-.cert-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent);
-    border-radius: 50%;
-}
-
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.skill-card {
-    background-color: var(--bg-card);
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.skill-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-}
-
-.skill-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    color: var(--accent);
-}
-
-.skill-header h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.skill-tag {
-    background-color: var(--bg-secondary);
-    color: var(--text-secondary);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-/* Experience Section */
-.experience {
-    background-color: var(--bg-secondary);
-}
-
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.exp-card {
-    background-color: var(--bg-card);
-    padding: 28px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    position: relative;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.exp-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-}
-
-.exp-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: rgba(59, 130, 246, 0.2);
-    color: var(--accent);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.exp-badge.office {
-    background-color: rgba(34, 197, 94, 0.2);
-    color: var(--accent-green);
-}
-
-.exp-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    padding-right: 80px;
-}
-
-.exp-company {
-    color: var(--accent);
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-.exp-description {
-    color: var(--text-secondary);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.exp-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.exp-tags span {
-    background-color: var(--bg-secondary);
-    color: var(--text-secondary);
-    padding: 4px 12px;
-    border-radius: 16px;
-    font-size: 12px;
-    border: 1px solid var(--border-color);
-}
-
-/* Projects Section */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.project-card {
-    background-color: var(--bg-card);
-    padding: 28px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-}
-
-.project-card.frontend {
-    border-left: 3px solid var(--accent-green);
-}
-
-.project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 16px;
-}
-
-.project-header h3 {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.project-link {
-    color: var(--text-secondary);
-    transition: color 0.3s ease;
-}
-
-.project-link:hover {
-    color: var(--accent);
-}
-
-.project-description {
-    color: var(--text-secondary);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.project-tags span {
-    background-color: transparent;
-    color: var(--accent);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
-    border: 1px solid var(--accent);
-}
-
-/* Contact Section */
-.contact {
-    background-color: var(--bg-secondary);
-    text-align: center;
-}
-
-.contact .section-title {
-    margin-bottom: 16px;
-}
-
-.contact-description {
-    color: var(--text-secondary);
-    font-size: 16px;
-    max-width: 600px;
-    margin: 0 auto 40px;
-}
-
-.contact-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.contact-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background-color: var(--bg-card);
-    padding: 16px 24px;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.contact-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-}
-
-.contact-card svg {
-    color: var(--text-secondary);
-}
-
-.contact-card span {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-/* Footer */
-.footer {
-    padding: 24px 0;
-    border-top: 1px solid var(--border-color);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer p {
-    color: var(--text-secondary);
-    font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .hero-title {
-        font-size: 48px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Devendra Pratap Singh | Full Stack Developer</title>
+  <meta name="description" content="Full Stack Developer building scalable web apps, fintech platforms, CRM dashboards, and travel solutions using React, Next.js, Node.js, Laravel, Django, and SQL/NoSQL." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; }
+    
+    :root {
+      --bg-primary: #09090b;
+      --bg-secondary: #111113;
+      --bg-card: #18181b;
+      --bg-card-hover: #1f1f23;
+      --text-primary: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --accent-green: #10b981;
+      --accent-purple: #8b5cf6;
+      --border-color: #27272a;
+      --border-hover: #3f3f46;
+      --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+      --gradient-glow: linear-gradient(135deg, rgba(59,130,246,0.4), rgba(139,92,246,0.3), rgba(16,185,129,0.4));
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+      --shadow-md: 0 8px 30px rgba(0,0,0,0.4);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+      --shadow-glow: 0 0 40px rgba(59,130,246,0.15);
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus {
+      position: fixed; left: 16px; top: 16px; width: auto; height: auto; padding: 12px 16px;
+      background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--accent);
+      border-radius: 8px; z-index: 2000; font-weight: 600;
     }
 
-    .hero-tagline {
-        font-size: 28px;
+    /* Navbar */
+    .navbar {
+      position: fixed; inset: 0 0 auto 0;
+      background: rgba(9,9,11,0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-weight: 900; color: var(--text-primary); letter-spacing: -0.5px; font-size: 20px;
+      display: flex; align-items: center; gap: 2px;
+    }
+    .logo .dot {
+      width: 8px; height: 8px; background: var(--gradient-primary); border-radius: 50%;
+      display: inline-block; margin-left: 2px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary); font-size: 14px; font-weight: 500;
+      transition: color 0.2s ease; position: relative;
+    }
+    .nav-links a::after {
+      content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--gradient-primary); border-radius: 2px; transition: width 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a:hover::after { width: 100%; }
+    .btn-resume {
+      padding: 10px 20px; border-radius: 10px;
+      background: var(--gradient-primary); color: white; font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+    }
+    .btn-resume:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(59,130,246,0.3);
     }
 
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Hero */
+    section { padding: 100px 0; }
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; padding-top: 80px;
+      position: relative; overflow: hidden;
+      background: var(--bg-primary);
     }
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59,130,246,0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(139,92,246,0.1), transparent),
+        radial-gradient(ellipse 50% 30% at 0% 80%, rgba(16,185,129,0.08), transparent);
+      pointer-events: none;
     }
-
+    /* Animated grid pattern */
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      pointer-events: none;
+    }
+    
     .hero-container {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 40px;
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: space-between; gap: 120px;
     }
-
-    .hero-content {
-        max-width: 100%;
+    .hero-content { max-width: 600px; }
+    
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 50px;
+      background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3);
+      margin-bottom: 24px;
     }
-
+    .status-dot {
+      width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+    .status-text { color: var(--accent-green); font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
+    
+    .hero-tag {
+      color: var(--text-muted); font-size: 14px; letter-spacing: 3px; font-weight: 600;
+      text-transform: uppercase; margin-bottom: 16px;
+    }
     .hero-title {
-        font-size: 40px;
+      font-size: clamp(40px, 8vw, 72px); font-weight: 900; line-height: 1.05;
+      letter-spacing: -2px; margin-bottom: 8px;
     }
-
+    .hero-title .gradient {
+      background: var(--gradient-primary); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
     .hero-tagline {
-        font-size: 24px;
+      font-size: clamp(18px, 3vw, 24px); font-weight: 500; color: var(--text-secondary);
+      margin-bottom: 24px;
     }
-
     .hero-description {
-        max-width: 100%;
+      color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-bottom: 12px;
+      max-width: 520px;
     }
-
     .hero-actions {
-        flex-direction: column;
-        align-items: center;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 32px;
     }
-
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--text-primary); color: var(--bg-primary);
+      padding: 16px 28px; border-radius: 12px; font-weight: 700; font-size: 15px;
+      transition: all 0.2s ease; border: none;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255,255,255,0.15);
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--text-primary);
+      padding: 16px 28px; border-radius: 12px; font-weight: 600; font-size: 15px;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      border-color: var(--text-secondary);
+      background: rgba(255,255,255,0.03);
+    }
+    
+    .social-icons { display: flex; align-items: center; gap: 12px; margin-left: 8px; }
+    .social-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      border: 1px solid var(--border-color); background: var(--bg-card);
+      display: grid; place-items: center; color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+    .social-icon:hover {
+      color: var(--accent); border-color: var(--accent);
+      transform: translateY(-3px); background: rgba(59,130,246,0.1);
+    }
+    
+    /* Profile Image */
+    .hero-image { flex-shrink: 0; position: relative; }
+    .hero-image::before {
+      content: ""; position: absolute; inset: -30px; border-radius: 50%;
+      background: var(--gradient-glow); filter: blur(40px); opacity: 0.6; z-index: -1;
+      animation: glow 4s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      0% { opacity: 0.4; transform: scale(0.95); }
+      100% { opacity: 0.7; transform: scale(1.05); }
+    }
     .image-wrapper {
-        width: 280px;
-        height: 280px;
+      width: 380px; height: 380px; border-radius: 50%; overflow: hidden;
+      position: relative; padding: 4px;
+      background: var(--gradient-primary);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      transition: transform 0.3s ease;
+    }
+    .image-wrapper:hover { transform: scale(1.02); }
+    .image-wrapper::before {
+      content: ""; position: absolute; inset: 4px; border-radius: 50%;
+      background: var(--bg-primary); z-index: 1;
+    }
+    .profile-img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 35%; border-radius: 50%;
+      position: relative; z-index: 2;
+      filter: brightness(1.05) contrast(1.02);
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
+    /* Section headings */
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-tag {
+      display: inline-block; padding: 8px 16px; border-radius: 50px;
+      background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
+      color: var(--accent); font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
     }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
-
-    .contact-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-card {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 600px) {
-    .hero-title {
-        font-size: 32px;
-    }
-
-    .hero-tagline {
-        font-size: 20px;
-    }
-
     .section-title {
-        font-size: 28px;
+      font-size: clamp(32px, 5vw, 44px); font-weight: 800; letter-spacing: -1px;
+    }
+    .section-subtitle {
+      color: var(--text-muted); font-size: 18px; max-width: 600px; margin: 16px auto 0;
     }
 
-    .image-wrapper {
-        width: 250px;
-        height: 400px;
+    /* Cards base */
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 16px; padding: 28px; position: relative; overflow: hidden;
+      transition: all 0.3s ease;
     }
-}
+    .card::before {
+      content: ""; position: absolute; inset: 0; border-radius: 16px;
+      background: var(--gradient-primary); opacity: 0; transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    .card:hover {
+      border-color: transparent; transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .card:hover::before { opacity: 0.05; }
 
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    /* About */
+    .about { background: var(--bg-secondary); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; }
+    .education-cards { display: flex; flex-direction: column; gap: 20px; }
+    
+    .edu-card { display: flex; gap: 20px; align-items: flex-start; }
+    .edu-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.15));
+      display: grid; place-items: center; color: var(--accent); flex-shrink: 0;
+    }
+    .edu-content h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+    .edu-content p { font-size: 14px; color: var(--text-secondary); }
+    .edu-year {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--accent-green); font-weight: 600; margin-top: 8px;
+      padding: 4px 10px; background: rgba(16,185,129,0.1); border-radius: 6px;
+    }
+    
+    .cert-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+      padding-bottom: 16px; border-bottom: 1px solid var(--border-color);
+    }
+    .cert-header h3 { font-size: 18px; font-weight: 700; }
+    .cert-list { list-style: none; }
+    .cert-list li {
+      position: relative; padding: 14px 0 14px 28px; color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 15px;
+    }
+    .cert-list li:last-child { border-bottom: none; }
+    .cert-list li::before {
+      content: ""; position: absolute; left: 0; top: 20px; width: 10px; height: 10px;
+      border-radius: 50%; background: var(--gradient-primary);
+    }
+
+    /* Skills */
+    .skills { background: var(--bg-primary); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    
+    .skill-card .skill-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+      padding-bottom: 16px; border-bottom: 1px solid var(--border-color);
+    }
+    .skill-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center; color: var(--accent);
+    }
+    .skill-icon.frontend { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+    .skill-icon.backend { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+    .skill-icon.languages { background: rgba(59,130,246,0.15); color: var(--accent); }
+    
+    .skill-header h3 { color: var(--text-primary); font-size: 17px; font-weight: 700; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-tag {
+      background: var(--bg-secondary); color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      padding: 8px 14px; border-radius: 10px; font-size: 13px; font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .skill-tag:hover {
+      border-color: var(--accent); color: var(--accent);
+      background: rgba(59,130,246,0.08); transform: translateY(-2px);
+    }
+
+    /* Experience */
+    .experience { background: var(--bg-secondary); }
+    .experience-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    
+    .exp-card { position: relative; }
+    .exp-badge {
+      position: absolute; top: 20px; right: 20px; padding: 6px 14px; border-radius: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .exp-badge.remote { background: rgba(59,130,246,0.15); color: var(--accent); }
+    .exp-badge.onsite { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+    .exp-badge.training { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+    
+    .exp-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; padding-right: 100px; }
+    .exp-company {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); font-weight: 700; font-size: 14px; margin-bottom: 14px;
+    }
+    .exp-description { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .exp-tags span {
+      background: var(--bg-secondary); color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 600;
+    }
+
+    /* Projects */
+    .projects { background: var(--bg-primary); }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    
+    .project-card { position: relative; }
+    .project-type {
+      position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 16px 16px 0 0;
+    }
+    .project-type.fullstack { background: var(--gradient-primary); }
+    .project-type.frontend { background: linear-gradient(90deg, var(--accent-green), #34d399); }
+    
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+    .project-header h3 { font-size: 19px; font-weight: 800; }
+    .project-link {
+      width: 40px; height: 40px; border-radius: 10px; background: var(--bg-secondary);
+      display: grid; place-items: center; color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+    .project-link:hover { color: var(--accent); background: rgba(59,130,246,0.1); }
+    
+    .project-description { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .project-tags span {
+      border: 1px solid var(--accent); color: var(--accent);
+      background: rgba(59,130,246,0.05);
+      padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 700;
+    }
+
+    /* Contact */
+    .contact { background: var(--bg-secondary); }
+    .contact-content { text-align: center; }
+    .contact-description {
+      color: var(--text-secondary); max-width: 640px; margin: 0 auto 40px;
+      font-size: 18px; line-height: 1.7;
+    }
+    .contact-cards {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;
+    }
+    .contact-card {
+      display: flex; align-items: center; gap: 14px; background: var(--bg-card);
+      padding: 18px 24px; border-radius: 14px; border: 1px solid var(--border-color);
+      color: var(--text-primary); transition: all 0.2s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-3px); border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-card .icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(59,130,246,0.1); display: grid; place-items: center; color: var(--accent);
+    }
+    .contact-card span { font-size: 15px; font-weight: 600; }
+    
+    .cta-button {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gradient-primary); color: white;
+      padding: 18px 36px; border-radius: 14px; font-weight: 700; font-size: 16px;
+      transition: all 0.2s ease; border: none;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(59,130,246,0.3);
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border-color); padding: 28px 0;
+      background: var(--bg-primary);
+    }
+    .footer-container {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .footer p { color: var(--text-muted); font-size: 14px; }
+    .footer .highlight { color: var(--accent); }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover,
+    .footer-links a:focus {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .image-wrapper { width: 320px; height: 320px; }
+    }
+    @media (max-width: 900px) {
+      .hero-container { flex-direction: column-reverse; text-align: center; gap: 48px; }
+      .hero-content { max-width: 100%; }
+      .hero-description { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .projects-grid, .experience-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .image-wrapper { width: 280px; height: 280px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      section { padding: 70px 0; }
+    }
+    @media (max-width: 480px) {
+      .image-wrapper { width: 220px; height: 220px; }
+      .contact-cards { flex-direction: column; align-items: center; }
+      .footer-container { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">DEVENDRA<span class="dot">.</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="D:\OneDrive\Documents\devendra_fullstack_resume.pdf" class="btn-resume" download>Resume</a></li>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main">
+    <div class="nav-container">
+      <a href="#home" class="logo" aria-label="Go to home">
+        DEVENDRA<span class="dot"></span>
+      </a>
+      <ul class="nav-links" aria-label="Primary">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="devendra_fullstack_resume.pdf" class="btn-resume" download>Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home" aria-labelledby="intro-title">
+    <div class="hero-container container">
+      <div class="hero-content">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span class="status-text">Available for opportunities</span>
+        </div>
+        
+        <p class="hero-tag">Full Stack Developer</p>
+        <h1 class="hero-title" id="intro-title">
+          Devendra<br/>Pratap <span class="gradient">Singh</span>
+        </h1>
+        <p class="hero-tagline">Building complete web experiences from browser to backend.</p>
+        <p class="hero-description">
+          Crafting scalable web applications, fintech platforms, CRM dashboards, and travel solutions with modern technologies.
+        </p>
+        <p class="hero-description">
+          Skilled in React, Next.js, Node.js, Laravel, Django, and end-to-end application architecture.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="devendra_fullstack_resume.pdf" class="btn-primary" download>
+            <span>Download Resume</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            <span>Get in Touch</span>
+          </a>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/devendrapratap/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/devendrapratapsinghsolanki" target="_blank" rel="noopener" class="social-icon" title="GitHub" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.16 6.84 9.49.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1.01.07 1.55 1.03 1.55 1.03.9 1.54 2.36 1.1 2.94.84.09-.65.35-1.1.64-1.35-2.22-.25-4.55-1.11-4.55-4.95 0-1.09.39-1.98 1.03-2.67-.1-.25-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.01 1.71.12 2.51.35 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.41.1 2.66.64.69 1.03 1.58 1.03 2.67 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85 0 1.33-.01 2.41-.01 2.74 0 .26.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+            </a>
+            <a href="mailto:dt9761233@email.com" class="social-icon" title="Email" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-image" aria-hidden="true">
+        <div class="image-wrapper">
+          <img src="my-img.jpeg" alt="Portrait of Devendra Pratap Singh" class="profile-img" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- About -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About</span>
+          <h2 class="section-title" id="about-title">Education & Background</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="education-cards">
+            <article class="card edu-card">
+              <div class="edu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div class="edu-content">
+                <h3>B.Tech in Computer Science & Engineering</h3>
+                <p>SSVGI College, Bareilly</p>
+                <span class="edu-year">2022 - 2026 • 71%</span>
+              </div>
+            </article>
+
+            <article class="card edu-card">
+              <div class="edu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div class="edu-content">
+                <h3>Senior Secondary (12th) – UP Board</h3>
+                <p>Science Stream</p>
+                <span class="edu-year">2022 • 75%</span>
+              </div>
+            </article>
+
+            <article class="card edu-card">
+              <div class="edu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div class="edu-content">
+                <h3>High School (10th) – UP Board</h3>
+                <p>Foundation Studies</p>
+                <span class="edu-year">2020 • 82%</span>
+              </div>
+            </article>
+          </div>
+
+          <aside class="card" aria-label="Certifications">
+            <div class="cert-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent)"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              <h3>Certifications</h3>
+            </div>
+            <ul class="cert-list">
+              <li>Python Development with Django - Netcamp</li>
+              <li>Industrial Certification - Netcamp</li>
+              <li>Certification in Excel / Power BI / Python / SQL</li>
+              <li>Certification in Networking / Android Development</li>
+              <li>Certification in Summer Internship / Industrial Internship /Full Stack Developer Internship</li>
             </ul>
+          </aside>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-tag">DATA ANALYST & FRONT-END DEVELOPER</span>
-                <h1 class="hero-title">
-                    Devendra<br>
-                    Pratap Singh<span class="dot">.</span>
-                </h1>
-                <p class="hero-tagline">Turning Data Into Insights & Ideas Into Interfaces.</p>
-                <p class="hero-description">
-                    Software Engineer and Full-Stack Developer with hands-on internship experience building responsive web applications, fintech platforms, CRM dashboards, and travel solutions.
-                </p>
-                <p class="hero-description">
-                    Skilled in React.js, Next.js, JavaScript, Tailwind CSS, Laravel, MySQL, Python and modern frontend/backend development.
-                </p>
-                <p class="hero-description">
-                    Download my resume to view the full software and analytics experience from both of my resumes.
-                </p>
-                <div class="hero-actions">
-                            <a href="D:\OneDrive\Documents\devendra_fullstack_resume.pdf" class="btn-download" download>
-                        Download Resume
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    </a>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/devendra-pratap-singh-solanki" target="_blank" class="social-icon" title="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                        </a>
-                        <a href="https://github.com/devendrapratapsinghsolanki" target="_blank" class="social-icon" title="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0   height: " viewBox(" width: " viewBox(" fill: " stroke: " stroke-width: " stroke-linecap: " stroke-linejoin: "><path d="
-                    </a>
-                        <a href="mailto:dt9761233@email.com" class="social-icon" title="Email">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Confident%20professional%20portrait%20with%20scarf-7I67O6jqkXVdheObH8CSXUJphYjiMK.png" alt="Devendra Pratap Singh" class="profile-img">
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <span class="section-tag">ABOUT</span>
-            <h2 class="section-title">Education & Background</h2>
-            
-            <div class="about-grid">
-                <div class="education-cards">
-                    <div class="edu-card">
-                        <div class="edu-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                        </div>
-                            <div class="edu-content">
-                            <h3>B.Tech in Computer Science & Engineering</h3>
-                            <p>SSVGI College, Bareilly</p>
-                            <span class="edu-year">2022 - 2026 71%</span>
-                        </div>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                        </div>
-                        <div class="edu-content">
-                            <h3>Senior Secondary (12th) – UP Board</h3>
-                            <p>75%</p>
-                            <span class="edu-year">2022</span>
-                        </div>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                        </div>
-                        <div class="edu-content">
-                            <h3>High School (10th) – UP Board</h3>
-                            <p>82%</p>
-                            <span class="edu-year">2020</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certifications-card">
-                    <div class="cert-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                        <h3>Certifications</h3>
-                    </div>
-                    <ul class="cert-list">
-                        <li>Python development with Django - Netcamp</li>
-                        <li>Netcamp Certification from DeepLearning.ai</li>
-                        <li>Full Stack Generative and Agentic AI with Python - Udemy</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Skills -->
+    <section class="skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Skills</span>
+          <h2 class="section-title" id="skills-title">My Tech Stack</h2>
+          <p class="section-subtitle">Technologies I use to bring ideas to life</p>
         </div>
+
+        <div class="skills-grid">
+          <article class="skill-card card">
+            <div class="skill-header">
+              <div class="skill-icon languages">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              </div>
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">PHP</span>
+            </div>
+          </article>
+
+          <article class="skill-card card">
+            <div class="skill-header">
+              <div class="skill-icon frontend">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+            </div>
+          </article>
+
+          <article class="skill-card card">
+            <div class="skill-header">
+              <div class="skill-icon backend">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h3>Backend & Database</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">GraphQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Redis</span>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <span class="section-tag">SKILLS</span>
-            <h2 class="section-title">My Toolkit</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-                        <h3>Languages</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">Java</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        <h3>Frontend</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">CSS</span>
-                       
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                        <h3>Backend & Tools</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Laravel</span>
-                        <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">Postman</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Experience -->
+    <section class="experience" id="experience" aria-labelledby="exp-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Experience</span>
+          <h2 class="section-title" id="exp-title">Work Experience</h2>
         </div>
+
+        <div class="experience-grid">
+          <article class="exp-card card">
+            <div class="exp-badge onsite">On-Site</div>
+            <h3>Full-Stack Developer Intern</h3>
+            <p class="exp-company">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Oscorm Digital Pvt Limited
+            </p>
+            <p class="exp-description">Built responsive fintech borrowing and CRM dashboard frontends using React, Next.js, and Tailwind CSS. Implemented backend APIs and Laravel database connectivity for travel booking workflows.</p>
+            <div class="exp-tags">
+              <span>React.js</span><span>Next.js</span><span>Tailwind CSS</span><span>Laravel</span><span>Node.js</span><span>Express.js</span>
+            </div>
+          </article>
+
+          <article class="exp-card card">
+            <div class="exp-badge training">Training</div>
+            <h3>Summer + Industrial Training</h3>
+            <p class="exp-company">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Netcamp Solutions Pvt Ltd
+            </p>
+            <p class="exp-description">Delivered end-to-end web solutions, connecting frontend interfaces with backend APIs and databases using React, Django, and SQL for real-world business workflows.</p>
+            <div class="exp-tags">
+              <span>React.js</span><span>Django</span><span>SQL</span><span>Networking</span>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <span class="section-tag">EXPERIENCE</span>
-            <h2 class="section-title">Work Experience</h2>
-            
-            <div class="experience-grid">
-                <div class="exp-card">
-                    <div class="exp-badge office">On-Site</div>
-                    <h3>Full-Stack Developer Intern</h3>
-                    <p class="exp-company">Oscorm Digital Pvt Limited</p>
-                    <p class="exp-description">Built responsive fintech borrowing and CRM dashboard frontends using React, Next.js, and Tailwind CSS. Implemented backend APIs and Laravel database connectivity for travel booking workflows.</p>
-                    <div class="exp-tags">
-                        <span>React.js</span>
-                        <span>Next.js</span>
-                        <span>Tailwind CSS</span>
-                        <span>Laravel</span>
-                    </div>
-                </div>
-
-                <div class="exp-card">
-                    <div class="exp-badge">Virtual</div>
-                    <h3>Data Analyst Intern</h3>
-                    <p class="exp-company">Unified Mentor</p>
-                    <p class="exp-description">Worked on data analysis projects involving data cleaning, visualization, and generating actionable insights using Python, Excel, and Power BI.</p>
-                    <div class="exp-tags">
-                        <span>Python</span>
-                        <span>Excel</span>
-                        <span>Power BI</span>
-                        <span>Data Analysis</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Projects -->
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Projects</span>
+          <h2 class="section-title" id="projects-title">Featured Work</h2>
+          <p class="section-subtitle">Real-world applications I've designed and developed</p>
         </div>
+
+        <div class="projects-grid">
+          <article class="project-card card">
+            <div class="project-type fullstack"></div>
+            <div class="project-header">
+              <h3>AI-Powered Issue Tracker</h3>
+              <a href="https://github.com/devendrapratapsinghsolanki/ai-powered-issue-tracker" target="_blank" rel="noopener" class="project-link" title="View on GitHub" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="project-description">Full-stack issue tracking platform with JWT authentication, role-based access, responsive dashboards, and Kanban task management.</p>
+            <div class="project-tags">
+              <span>Next.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span>
+            </div>
+          </article>
+
+          <article class="project-card card">
+            <div class="project-type fullstack"></div>
+            <div class="project-header">
+              <h3>Travel & Booking Platform</h3>
+              <a href="https://github.com/devendrapratapsinghsolanki/travel-booking-management-system" target="_blank" rel="noopener" class="project-link" title="View on GitHub" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="project-description">Scalable travel management platform with secure APIs, booking workflows, user management, and responsive dashboards.</p>
+            <div class="project-tags">
+              <span>Django REST</span><span>Next.js</span><span>Tailwind CSS</span>
+            </div>
+          </article>
+
+          <article class="project-card card">
+            <div class="project-type frontend"></div>
+            <div class="project-header">
+              <h3>Client Dashboard</h3>
+              <a href="https://github.com/devendra-solanki/client-dashboard" target="_blank" rel="noopener" class="project-link" title="View on GitHub" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="project-description">Responsive client-side dashboard with real-time data visualization, user management, and analytics features.</p>
+            <div class="project-tags">
+              <span>React</span><span>Next.js</span><span>Tailwind CSS</span>
+            </div>
+          </article>
+
+          <article class="project-card card">
+            <div class="project-type frontend"></div>
+            <div class="project-header">
+              <h3>BorrowFind Insurance</h3>
+              <a href="https://github.com/devendra-solanki/borrowfind" target="_blank" rel="noopener" class="project-link" title="View on GitHub" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="project-description">Insurance comparison platform with policy comparison features, premium calculators, and intuitive discovery interface.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <span class="section-tag">PROJECTS</span>
-            <h2 class="section-title">What I've Built</h2>
-            
-            <div class="projects-grid">
-                <!-- Data Analytics Projects -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>AI-Powered Issue Tracker</h3>
-                        <a href="#" target="_blank" class="project-link" title="View on GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                        </a>
-                    </div>
-                    <p class="project-description">Built a full-stack issue tracking platform using Next.js, Node.js, Express.js, and MongoDB. Implemented JWT authentication, role-based access, responsive dashboards, and Kanban task management.</p>
-                    <div class="project-tags">
-                        <span>Next.js</span>
-                        <span>Node.js</span>
-                        <span>Express.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Travel & Booking Management</h3>
-                        <a href="#" target="_blank" class="project-link" title="View on GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                        </a>
-                    </div>
-                    <p class="project-description">Built a scalable travel management platform with Django REST Framework and Next.js. Developed secure APIs, booking workflows, user management, and responsive booking dashboards.</p>
-                    <div class="project-tags">
-                        <span>Django REST</span>
-                        <span>Next.js</span>
-                        <span>Tailwind CSS</span>
-                        <span>Booking</span>
-                    </div>
-                </div>
-
-                <!-- Frontend Projects -->
-                <div class="project-card frontend">
-                    <div class="project-header">
-                        <h3>Client-Side Dashboard</h3>
-                        <a href="https://github.com/devendra-solanki/client-dashboard" target="_blank" class="project-link" title="View on GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                        </a>
-                    </div>
-                    <p class="project-description">Built a responsive client-side dashboard with real-time data visualization, user management, and analytics features using React and Next.js.</p>
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>Next.js</span>
-                        <span>Tailwind CSS</span>
-                        <span>Dashboard</span>
-                    </div>
-                </div>
-
-                <div class="project-card frontend">
-                    <div class="project-header">
-                        <h3>BorrowFind - Insurance Platform</h3>
-                        <a href="https://github.com/devendra-solanki/borrowfind" target="_blank" class="project-link" title="View on GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                        </a>
-                    </div>
-                    <p class="project-description">Developed a PolicyBazaar-like insurance comparison website with features for comparing policies, premium calculators, and user-friendly interface for insurance discovery.</p>
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Responsive</span>
-                    </div>
-                </div>
+    <!-- Contact -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Contact</span>
+          <h2 class="section-title" id="contact-title">Let's Work Together</h2>
+        </div>
+        
+        <div class="contact-content">
+          <p class="contact-description">
+            Full Stack Developer with experience building fintech, CRM, and travel applications. Open to roles in Full-Stack Development, Backend Engineering, and Software Architecture.
+          </p>
+          
+          <div class="contact-cards" role="list">
+            <a role="listitem" href="mailto:dt9761233@email.com" class="contact-card" aria-label="Email">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <span>dt9761233@email.com</span>
+            </a>
+            <a role="listitem" href="tel:+918869077580" class="contact-card" aria-label="Phone">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <span>+91 8869077580</span>
+            </a>
+            <div role="listitem" class="contact-card" aria-label="Location">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <span>Noida, Uttar Pradesh</span>
             </div>
+          </div>
+          
+          <a href="mailto:dt9761233@email.com" class="cta-button">
+            <span>Start a Conversation</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <span class="section-tag">CONTACT</span>
-            <h2 class="section-title">Let's Work Together</h2>
-            <p class="contact-description">Software Engineer & Full-Stack Developer intern with experience in fintech, CRM, and travel application development. Open to roles in Full-Stack Development, Frontend Engineering, and Software Engineering — let's connect!</p>
-            <div class="contact-cards">
-                <a href="mailto:dt9761233@email.com" class="contact-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                    <span>dt9761233@email.com</span>
-                </a>
-                <a href="tel:+918869077580" class="contact-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    <span>+91 8869077580</span>
-                </a>
-                <div class="contact-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Noida, UP</span>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <p>&copy; <span id="year">2025</span> Devendra Pratap Singh Solanki</p>
+      <p>Built with <span class="highlight">passion</span> for code</p>
+      <div class="footer-links" aria-label="Important links">
+        <a href="https://github.com/devendrapratapsinghsolanki" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/devendrapratap/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/devendrapratapsinghsolanki/ai-powered-issue-tracker" target="_blank" rel="noopener">AI Issue Tracker</a>
+        <a href="https://github.com/devendrapratapsinghsolanki/travel-booking-management-system" target="_blank" rel="noopener">Travel Booking</a>
+        <a href="devendra_fullstack_resume.pdf" download>Resume</a>
+        <a href="mailto:dt9761233@email.com">Email</a>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2026 Devendra Pratap Singh Solanki</p>
-            <p>Built with passion for data & code.</p>
-        </div>
-    </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
