@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, ArrowRight, Mail, Sparkles, Check, ExternalLink } from 'lucide-react';
+import { Download, ArrowRight, Mail, Sparkles, Check, Code2, Database, ShieldCheck, Layers, Terminal } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { portfolioData } from '../data/portfolioData';
 
@@ -68,22 +68,23 @@ export default function Hero({ onOpenResume }) {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
-                padding: '4px 12px',
+                padding: '4px 14px',
                 borderRadius: '9999px',
-                background: 'rgba(16, 185, 129, 0.1)',
-                border: '1px solid rgba(16, 185, 129, 0.25)',
-                marginBottom: '16px'
+                background: 'rgba(16, 185, 129, 0.12)',
+                border: '1px solid rgba(16, 185, 129, 0.3)',
+                marginBottom: '18px'
               }}
             >
               <span
                 style={{
-                  width: '6px',
-                  height: '6px',
+                  width: '7px',
+                  height: '7px',
                   borderRadius: '50%',
-                  background: '#10b981'
+                  background: '#10b981',
+                  boxShadow: '0 0 8px #10b981'
                 }}
               />
-              <span style={{ fontSize: '0.78rem', fontWeight: '600', color: '#10b981' }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: '700', color: '#10b981', letterSpacing: '0.02em' }}>
                 {personal.availability}
               </span>
             </div>
@@ -91,7 +92,7 @@ export default function Hero({ onOpenResume }) {
             {/* Main Name & Title */}
             <h1
               style={{
-                fontSize: 'clamp(2rem, 3.8vw, 2.75rem)',
+                fontSize: 'clamp(2.1rem, 3.8vw, 2.85rem)',
                 fontWeight: '800',
                 lineHeight: '1.15',
                 color: 'var(--text-main)',
@@ -108,8 +109,8 @@ export default function Hero({ onOpenResume }) {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '6px',
-                minHeight: '36px',
+                gap: '8px',
+                minHeight: '38px',
                 marginBottom: '16px'
               }}
             >
@@ -117,10 +118,10 @@ export default function Hero({ onOpenResume }) {
               <span
                 className="text-gradient-cyan font-mono"
                 style={{
-                  fontSize: '1.1rem',
+                  fontSize: '1.15rem',
                   fontWeight: '700',
                   borderRight: '2px solid #4f46e5',
-                  paddingRight: '3px'
+                  paddingRight: '4px'
                 }}
               >
                 {currentText}
@@ -152,7 +153,7 @@ export default function Hero({ onOpenResume }) {
               }}
             >
               <a href="#projects" className="btn-primary">
-                <span>View Projects</span>
+                <span>Explore Projects</span>
                 <ArrowRight size={16} />
               </a>
 
@@ -183,7 +184,7 @@ export default function Hero({ onOpenResume }) {
                 target="_blank"
                 rel="noreferrer"
                 className="badge-tech"
-                style={{ textDecoration: 'none', padding: '6px 12px' }}
+                style={{ textDecoration: 'none', padding: '6px 14px' }}
               >
                 <GithubIcon size={15} />
                 <span>GitHub</span>
@@ -194,7 +195,7 @@ export default function Hero({ onOpenResume }) {
                 target="_blank"
                 rel="noreferrer"
                 className="badge-tech"
-                style={{ textDecoration: 'none', padding: '6px 12px' }}
+                style={{ textDecoration: 'none', padding: '6px 14px' }}
               >
                 <LinkedinIcon size={15} />
                 <span>LinkedIn</span>
@@ -212,57 +213,107 @@ export default function Hero({ onOpenResume }) {
             </div>
           </div>
 
-          {/* Right: Profile Picture / Mobile Avatar */}
-          <div className="hero-profile-container">
-            <div
-              className="glass-card"
-              style={{
-                padding: '14px',
-                borderRadius: '20px',
-                maxWidth: '340px',
-                width: '100%'
-              }}
-            >
+          {/* Right: Circular Aesthetic Profile Card */}
+          <div className="hero-profile-container" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+            <div style={{ position: 'relative', width: '280px', height: '280px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              
+              {/* Outer Decorative Gradient Ring */}
               <div
-                className="hero-profile-avatar"
+                style={{
+                  position: 'absolute',
+                  inset: '-12px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.4) 0%, rgba(6, 182, 212, 0.4) 50%, rgba(16, 185, 129, 0.3) 100%)',
+                  filter: 'blur(10px)',
+                  opacity: 0.75,
+                  zIndex: 0
+                }}
+              />
+
+              {/* Glowing Avatar Border Container */}
+              <div
                 style={{
                   position: 'relative',
-                  borderRadius: '14px',
-                  overflow: 'hidden',
-                  aspectRatio: '4/4.8',
-                  backgroundColor: 'var(--bg-surface)'
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '50%',
+                  padding: '5px',
+                  background: 'linear-gradient(135deg, #4f46e5 0%, #06b6d4 50%, #10b981 100%)',
+                  boxShadow: '0 12px 35px rgba(79, 70, 229, 0.35)',
+                  zIndex: 1
                 }}
               >
-                <img
-                  src={personal.image}
-                  alt={personal.name}
+                {/* Profile Image */}
+                <div
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center top'
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    backgroundColor: 'var(--bg-surface)'
                   }}
-                />
+                >
+                  <img
+                    src={personal.image}
+                    alt={personal.name}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 15%'
+                    }}
+                  />
+                </div>
               </div>
 
+              {/* Floating Badge 1: Next.js & React */}
               <div
+                className="desktop-only-badge"
                 style={{
-                  marginTop: '12px',
+                  position: 'absolute',
+                  top: '-8px',
+                  left: '-28px',
+                  padding: '7px 12px',
+                  borderRadius: '12px',
+                  background: 'var(--bg-card)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid var(--border-hover)',
+                  boxShadow: 'var(--shadow-md)',
                   display: 'flex',
-                  justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '4px 6px'
+                  gap: '6px',
+                  zIndex: 2
                 }}
               >
-                <div>
-                  <div style={{ fontSize: '0.88rem', fontWeight: '700', color: 'var(--text-main)' }}>
-                    {personal.shortName}
-                  </div>
-                  <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                    {personal.title}
-                  </div>
-                </div>
-                <div className="badge-live">Available</div>
+                <Code2 size={15} color="#4f46e5" />
+                <span style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-main)' }}>
+                  Next.js & React
+                </span>
+              </div>
+
+              {/* Floating Badge 2: PostgreSQL / Prisma */}
+              <div
+                className="desktop-only-badge"
+                style={{
+                  position: 'absolute',
+                  bottom: '-8px',
+                  right: '-24px',
+                  padding: '7px 12px',
+                  borderRadius: '12px',
+                  background: 'var(--bg-card)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid var(--border-hover)',
+                  boxShadow: 'var(--shadow-md)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  zIndex: 2
+                }}
+              >
+                <Database size={15} color="#10b981" />
+                <span style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-main)' }}>
+                  PostgreSQL & Prisma
+                </span>
               </div>
             </div>
           </div>

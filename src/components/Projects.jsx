@@ -8,23 +8,69 @@ import { portfolioData } from '../data/portfolioData';
 
 export default function Projects() {
   const { projects } = portfolioData;
+  const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
+
+  const filterCategories = ['All', 'Fintech & SaaS', 'Production Web Platform', 'Data Analytics & BI'];
+
+  const filteredProjects = activeFilter === 'All'
+    ? projects
+    : projects.filter(p => {
+        if (activeFilter === 'Fintech & SaaS') return p.category.includes('Fintech') || p.category.includes('SaaS') || p.category.includes('CRM');
+        if (activeFilter === 'Production Web Platform') return p.category.includes('Web') || p.category.includes('Production');
+        if (activeFilter === 'Data Analytics & BI') return p.category.includes('Data') || p.category.includes('Analytics') || p.category.includes('BI');
+        return true;
+      });
 
   return (
     <section id="projects" style={{ padding: '80px 0', position: 'relative' }}>
       <div className="app-container">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '36px' }}>
           <div className="section-tag">
             <FolderGit2 size={13} />
             <span>Featured Work</span>
           </div>
           <h2 className="section-title">
-            Engineering <span className="text-gradient">Projects</span>
+            Engineering & <span className="text-gradient">Analytics Projects</span>
           </h2>
           <p className="section-subtitle">
-            Authentic platforms, SaaS architectures, and enterprise systems built with modern web technologies.
+            Explore full-stack SaaS platforms, double-entry fintech systems, production web portals, and Power BI dashboards.
           </p>
+        </div>
+
+        {/* Filter Pills */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            gap: '8px',
+            marginBottom: '36px'
+          }}
+        >
+          {filterCategories.map((cat) => {
+            const isActive = activeFilter === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveFilter(cat)}
+                style={{
+                  padding: '7px 16px',
+                  borderRadius: '8px',
+                  fontSize: '0.84rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  border: isActive ? '1px solid #4f46e5' : '1px solid var(--border-subtle)',
+                  background: isActive ? '#4f46e5' : 'var(--bg-pill)',
+                  color: isActive ? '#ffffff' : 'var(--text-muted)',
+                  transition: 'all 0.15s ease'
+                }}
+              >
+                {cat}
+              </button>
+            );
+          })}
         </div>
 
         {/* Projects Grid */}
@@ -35,7 +81,7 @@ export default function Projects() {
             gap: '24px'
           }}
         >
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="glass-card"
@@ -73,20 +119,20 @@ export default function Projects() {
                   </span>
 
                   {project.isLive ? (
-                    <div className="badge-live">Live</div>
+                    <div className="badge-live">Live Demo</div>
                   ) : (
                     <span
                       style={{
                         fontSize: '0.72rem',
                         fontWeight: '600',
-                        color: '#f59e0b',
-                        background: 'rgba(245, 158, 11, 0.1)',
+                        color: 'var(--text-muted)',
+                        background: 'var(--bg-pill)',
                         padding: '3px 8px',
                         borderRadius: '9999px',
-                        border: '1px solid rgba(245, 158, 11, 0.25)'
+                        border: '1px solid var(--border-subtle)'
                       }}
                     >
-                      In Progress
+                      {project.badge}
                     </span>
                   )}
                 </div>
@@ -183,7 +229,7 @@ export default function Projects() {
                   }}
                 >
                   <Eye size={14} />
-                  <span>Architecture</span>
+                  <span>Overview</span>
                 </button>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -191,7 +237,7 @@ export default function Projects() {
                     <a
                       href={project.githubUrl}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       style={{
                         padding: '7px 12px',
                         borderRadius: '8px',
@@ -216,7 +262,7 @@ export default function Projects() {
                     <a
                       href={project.liveUrl}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="btn-cyan"
                       style={{ padding: '7px 14px', fontSize: '0.82rem' }}
                     >
@@ -343,7 +389,7 @@ export default function Projects() {
                   <a
                     href={selectedProject.githubUrl}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="btn-secondary"
                     style={{ padding: '8px 16px', fontSize: '0.84rem' }}
                   >
@@ -355,7 +401,7 @@ export default function Projects() {
                   <a
                     href={selectedProject.liveUrl}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="btn-cyan"
                     style={{ padding: '8px 16px', fontSize: '0.84rem' }}
                   >
