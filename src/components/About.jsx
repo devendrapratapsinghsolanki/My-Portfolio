@@ -50,7 +50,7 @@ export default function About({ onOpenResume }) {
           >
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
-                <Sparkles size={18} color="#6366f1" />
+                <Sparkles size={18} color="#FF6B6B" />
                 <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: 'var(--text-main)' }}>
                   Professional Summary
                 </h3>
@@ -72,7 +72,7 @@ export default function About({ onOpenResume }) {
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '3px' }}>
-                      <CheckCircle2 size={14} color="#10b981" />
+                      <CheckCircle2 size={14} color="#6BCB77" />
                       <span style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-main)' }}>
                         {item.title}
                       </span>
@@ -117,14 +117,14 @@ export default function About({ onOpenResume }) {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ef4444' }} />
-                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#f59e0b' }} />
-                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#10b981' }} />
+                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#FF6B6B' }} />
+                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#FFD93D' }} />
+                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#6BCB77' }} />
                 <span style={{ marginLeft: '8px', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
                   devendra.config.ts
                 </span>
               </div>
-              <span style={{ fontSize: '0.72rem', color: '#6366f1', fontFamily: 'var(--font-mono)' }}>
+              <span style={{ fontSize: '0.72rem', color: '#4D96FF', fontFamily: 'var(--font-mono)' }}>
                 TypeScript
               </span>
             </div>
@@ -143,42 +143,42 @@ export default function About({ onOpenResume }) {
               }}
             >
               <div>
-                <span style={{ color: '#ec4899' }}>const </span>
-                <span style={{ color: '#818cf8' }}>developer</span>
+                <span style={{ color: '#FF6B6B' }}>const </span>
+                <span style={{ color: '#FFD93D' }}>developer</span>
                 <span style={{ color: '#cbd5e1' }}> = {'{'}</span>
               </div>
 
               <div style={{ paddingLeft: '16px' }}>
-                <span style={{ color: '#38bdf8' }}>name</span>: <span style={{ color: '#34d399' }}>'{personal.name}'</span>,
+                <span style={{ color: '#4D96FF' }}>name</span>: <span style={{ color: '#6BCB77' }}>'{personal.name}'</span>,
               </div>
               <div style={{ paddingLeft: '16px' }}>
-                <span style={{ color: '#38bdf8' }}>role</span>: <span style={{ color: '#34d399' }}>'Full Stack Developer'</span>,
+                <span style={{ color: '#4D96FF' }}>role</span>: <span style={{ color: '#6BCB77' }}>'Full Stack Developer'</span>,
               </div>
               <div style={{ paddingLeft: '16px' }}>
-                <span style={{ color: '#38bdf8' }}>location</span>: <span style={{ color: '#34d399' }}>'Bareilly (U.P.), India'</span>,
+                <span style={{ color: '#4D96FF' }}>location</span>: <span style={{ color: '#6BCB77' }}>'{personal.location}'</span>,
               </div>
               <div style={{ paddingLeft: '16px' }}>
-                <span style={{ color: '#38bdf8' }}>stack</span>: [
-                <span style={{ color: '#34d399' }}>'React'</span>,{' '}
-                <span style={{ color: '#34d399' }}>'Next.js'</span>,{' '}
-                <span style={{ color: '#34d399' }}>'Node.js'</span>,{' '}
-                <span style={{ color: '#34d399' }}>'TypeScript'</span>,{' '}
-                <span style={{ color: '#34d399' }}>'Prisma'</span>,{' '}
-                <span style={{ color: '#34d399' }}>'MySQL'</span>
+                <span style={{ color: '#4D96FF' }}>stack</span>: [
+                <span style={{ color: '#6BCB77' }}>'React'</span>,{' '}
+                <span style={{ color: '#6BCB77' }}>'Next.js'</span>,{' '}
+                <span style={{ color: '#6BCB77' }}>'Node.js'</span>,{' '}
+                <span style={{ color: '#6BCB77' }}>'TypeScript'</span>,{' '}
+                <span style={{ color: '#6BCB77' }}>'Prisma'</span>,{' '}
+                <span style={{ color: '#6BCB77' }}>'MySQL'</span>
                 ],
               </div>
               <div style={{ paddingLeft: '16px' }}>
-                <span style={{ color: '#38bdf8' }}>internship</span>: <span style={{ color: '#34d399' }}>'Oscorm Inc (Nov 2025 – May 2026)'</span>,
+                <span style={{ color: '#4D96FF' }}>internship</span>: <span style={{ color: '#6BCB77' }}>'Oscorm Inc (Nov 2025 – May 2026)'</span>,
               </div>
               <div style={{ paddingLeft: '16px' }}>
-                <span style={{ color: '#38bdf8' }}>passion</span>: <span style={{ color: '#a5b4fc' }}>'High-speed SaaS & clean UX architectures'</span>
+                <span style={{ color: '#4D96FF' }}>passion</span>: <span style={{ color: '#FFD93D' }}>'High-speed SaaS & clean UX architectures'</span>
               </div>
               <div>
                 <span style={{ color: '#cbd5e1' }}>{'};'}</span>
               </div>
 
-              <div style={{ marginTop: '12px', color: '#10b981' }}>
-                // Ready for new challenges & full-stack development 🚀
+              <div style={{ marginTop: '12px', color: '#6BCB77' }}>
+                // Ready for new full-stack challenges in Noida & Remote 🚀
               </div>
             </div>
           </div>

@@ -12,14 +12,14 @@ export const portfolioData = {
     ],
     email: "pratpdevendr@gmail.com",
     phone: "+91-8869077580",
-    location: "Noida (Uttar Pradesh), India",
+    location: "Noida, Uttar Pradesh, India",
     portfolioUrl: "https://devendrapratap.in",
     displayUrl: "devendrapratap.in",
     github: "https://github.com/devendrapratapsinghsolanki",
     linkedin: "https://linkedin.com/in/pratpdevendr",
     resumePdf: "/Devendra_Pratap_Singh_Solanki_Resume.pdf",
     image: "/my-img.jpeg",
-    availability: "Available for Full-Stack Opportunities",
+    availability: "Available for Full-Stack Opportunities in Noida / Remote",
     tagline: "Building scalable SaaS architectures, high-performance web platforms, and data-driven dashboards with modern JavaScript, TypeScript, and SQL ecosystems."
   },
 
@@ -200,7 +200,7 @@ export const portfolioData = {
       githubUrl: "https://github.com/devendrapratapsinghsolanki/Omato-Food-Delivery-Dashboard",
       highlights: [
         "Created an interactive business analytics dashboard analyzing 15,000+ ordered quantities across 3,000+ delivery transactions.",
-        "Developed custom DAX calculations, KPI metrics, and Power Query ETL pipelines for deep operational analysis.",
+        "Developed custom DAX calculations, KPI measures, and Power Query ETL pipelines for deep operational analysis.",
         "Identified key revenue drivers, peak order windows, popular food categories, and payment channel distributions."
       ],
       metrics: "15K+ Orders Analyzed • DAX Measures • Power Query ETL"
@@ -255,7 +255,7 @@ export const portfolioData = {
     email: "pratpdevendr@gmail.com",
     phone: "+91-8869077580",
     displayPhone: "+91 88690 77580",
-    location: "Bareilly, Uttar Pradesh, India",
+    location: "Noida, Uttar Pradesh, India",
     linkedin: "https://linkedin.com/in/pratpdevendr",
     github: "https://github.com/devendrapratapsinghsolanki",
     portfolio: "https://devendrapratap.in"

@@ -24,21 +24,27 @@ export default function BackgroundCanvas({ theme = 'dark' }) {
 
     const isDark = theme === 'dark';
 
+    const vibrantPalette = [
+      'rgba(255, 107, 107,', // Coral
+      'rgba(255, 217, 61,',  // Yellow
+      'rgba(107, 203, 119,', // Green
+      'rgba(77, 150, 255,',  // Blue
+      'rgba(106, 5, 114,'    // Purple
+    ];
+
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
         radius: Math.random() * 1.8 + 0.8,
-        color: isDark
-          ? ['rgba(201, 173, 167,', 'rgba(154, 140, 152,', 'rgba(74, 78, 105,'][Math.floor(Math.random() * 3)]
-          : ['rgba(74, 78, 105,', 'rgba(154, 140, 152,', 'rgba(34, 34, 59,'][Math.floor(Math.random() * 3)],
-        alpha: isDark ? Math.random() * 0.35 + 0.15 : Math.random() * 0.25 + 0.1
+        color: vibrantPalette[Math.floor(Math.random() * vibrantPalette.length)],
+        alpha: isDark ? Math.random() * 0.4 + 0.15 : Math.random() * 0.3 + 0.1
       });
     }
 
-    let mouse = { x: -1000, y: -1000, radius: 120 };
+    let mouse = { x: -1000, y: -1000, radius: 125 };
 
     const handleMouseMove = (e) => {
       mouse.x = e.clientX;
@@ -90,7 +96,7 @@ export default function BackgroundCanvas({ theme = 'dark' }) {
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             const lineAlpha = (1 - dist2 / 100) * (isDark ? 0.15 : 0.08);
-            ctx.strokeStyle = `rgba(201, 173, 167, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(255, 107, 107, ${lineAlpha})`;
             ctx.lineWidth = 0.7;
             ctx.stroke();
           }
@@ -121,7 +127,7 @@ export default function BackgroundCanvas({ theme = 'dark' }) {
         height: '100vh',
         pointerEvents: 'none',
         zIndex: 0,
-        opacity: 0.65
+        opacity: 0.7
       }}
     />
   );
