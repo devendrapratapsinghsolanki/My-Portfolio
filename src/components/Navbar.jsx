@@ -66,16 +66,6 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
 
         {/* Desktop Navigation */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '2px' }} className="desktop-nav">
-          <style>{`
-            @media (max-width: 900px) {
-              .desktop-nav { display: none !important; }
-              .mobile-toggle-btn { display: flex !important; }
-            }
-            @media (min-width: 901px) {
-              .mobile-toggle-btn { display: none !important; }
-            }
-          `}</style>
-
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -87,8 +77,8 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
                   borderRadius: '8px',
                   fontSize: '0.86rem',
                   fontWeight: isActive ? '600' : '500',
-                  color: isActive ? '#4f46e5' : 'var(--text-muted)',
-                  background: isActive ? 'var(--bg-pill)' : 'transparent',
+                  color: isActive ? '#10b981' : 'var(--text-muted)',
+                  background: isActive ? 'rgba(16, 185, 129, 0.12)' : 'transparent',
                   textDecoration: 'none',
                   transition: 'all 0.15s ease'
                 }}
@@ -112,7 +102,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
 
           <button
             onClick={onOpenResume}
-            className="btn-cyan"
+            className="btn-primary"
             style={{ padding: '8px 16px', fontSize: '0.84rem' }}
           >
             <Download size={15} />
@@ -120,7 +110,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
           </button>
         </div>
 
-        {/* Mobile controls */}
+        {/* Mobile controls (Clean top bar on mobile) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }} className="mobile-toggle-btn">
           <button
             onClick={toggleTheme}
@@ -132,73 +122,15 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
           </button>
 
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="theme-toggle-btn"
-            aria-label="Toggle navigation"
+            onClick={onOpenResume}
+            className="btn-primary"
+            style={{ padding: '7px 12px', fontSize: '0.78rem' }}
           >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            <Download size={14} />
+            <span>CV</span>
           </button>
         </div>
       </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: '68px',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'var(--bg-main)',
-            padding: '20px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            zIndex: 999,
-            overflowY: 'auto'
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '12px 16px',
-                  borderRadius: '10px',
-                  background: activeSection === link.id ? 'var(--bg-pill)' : 'transparent',
-                  color: activeSection === link.id ? '#4f46e5' : 'var(--text-main)',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  textDecoration: 'none'
-                }}
-              >
-                <span>{link.name}</span>
-                <ChevronRight size={16} color="var(--text-dim)" />
-              </a>
-            ))}
-          </div>
-
-          <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenResume();
-              }}
-              className="btn-cyan"
-              style={{ width: '100%', padding: '12px' }}
-            >
-              <Download size={16} />
-              <span>Download Resume (PDF)</span>
-            </button>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

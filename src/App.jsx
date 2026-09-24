@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
 import BackgroundCanvas from './components/BackgroundCanvas';
 import CustomCursor from './components/CustomCursor';
+import MobileBottomBar from './components/MobileBottomBar';
 
 export default function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
@@ -30,13 +31,13 @@ export default function App() {
 
   return (
     <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: 'var(--bg-main)', overflowX: 'hidden' }}>
-      {/* Background Particle Canvas (subtle) */}
+      {/* Background Particle Canvas */}
       <BackgroundCanvas theme={theme} />
 
       {/* Trailing Cursor for desktop */}
       <CustomCursor />
 
-      {/* Navigation */}
+      {/* Top Navigation */}
       <Navbar
         onOpenResume={() => setIsResumeModalOpen(true)}
         theme={theme}
@@ -56,6 +57,9 @@ export default function App() {
 
       {/* Footer */}
       <Footer onOpenResume={() => setIsResumeModalOpen(true)} />
+
+      {/* Exclusive Mobile Floating Bottom Bar */}
+      <MobileBottomBar onOpenResume={() => setIsResumeModalOpen(true)} />
 
       {/* Resume Modal */}
       <ResumeModal
