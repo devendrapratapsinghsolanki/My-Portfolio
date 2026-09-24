@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Menu, X, Sun, Moon, ChevronRight, FileText } from 'lucide-react';
+import { Download, Sun, Moon } from 'lucide-react';
 import Logo from './Logo';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Navbar({ onOpenResume, theme, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
@@ -51,8 +50,8 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
         right: 0,
         zIndex: 1000,
         backgroundColor: scrolled ? 'var(--bg-header)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+        backdropFilter: scrolled ? 'blur(14px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
         borderBottom: scrolled ? '1px solid var(--border-subtle)' : '1px solid transparent',
         boxShadow: scrolled ? 'var(--shadow-sm)' : 'none',
         transition: 'background-color 0.25s, border-color 0.25s'
@@ -65,7 +64,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
         </a>
 
         {/* Desktop Navigation */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '2px' }} className="desktop-nav">
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '4px' }} className="desktop-nav">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -76,9 +75,9 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
                   padding: '7px 14px',
                   borderRadius: '8px',
                   fontSize: '0.86rem',
-                  fontWeight: isActive ? '600' : '500',
-                  color: isActive ? '#10b981' : 'var(--text-muted)',
-                  background: isActive ? 'rgba(16, 185, 129, 0.12)' : 'transparent',
+                  fontWeight: isActive ? '700' : '500',
+                  color: isActive ? '#f43f5e' : 'var(--text-muted)',
+                  background: isActive ? 'rgba(244, 63, 94, 0.1)' : 'transparent',
                   textDecoration: 'none',
                   transition: 'all 0.15s ease'
                 }}
@@ -89,7 +88,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
           })}
         </nav>
 
-        {/* Right Actions: Theme Toggle & Resume Button */}
+        {/* Right Actions: ONLY ONE Resume button and Theme toggle */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }} className="desktop-nav">
           <button
             onClick={toggleTheme}
@@ -103,14 +102,14 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
           <button
             onClick={onOpenResume}
             className="btn-primary"
-            style={{ padding: '8px 16px', fontSize: '0.84rem' }}
+            style={{ padding: '8px 18px', fontSize: '0.84rem' }}
           >
             <Download size={15} />
             <span>Resume</span>
           </button>
         </div>
 
-        {/* Mobile controls (Clean top bar on mobile) */}
+        {/* Mobile top controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }} className="mobile-toggle-btn">
           <button
             onClick={toggleTheme}
@@ -119,15 +118,6 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-
-          <button
-            onClick={onOpenResume}
-            className="btn-primary"
-            style={{ padding: '7px 12px', fontSize: '0.78rem' }}
-          >
-            <Download size={14} />
-            <span>CV</span>
           </button>
         </div>
       </div>

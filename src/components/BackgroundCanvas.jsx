@@ -32,8 +32,8 @@ export default function BackgroundCanvas({ theme = 'dark' }) {
         vy: (Math.random() - 0.5) * 0.4,
         radius: Math.random() * 1.8 + 0.8,
         color: isDark
-          ? ['rgba(99, 102, 241,', 'rgba(2, 132, 199,', 'rgba(16, 185, 129,'][Math.floor(Math.random() * 3)]
-          : ['rgba(79, 70, 229,', 'rgba(2, 132, 199,', 'rgba(5, 150, 105,'][Math.floor(Math.random() * 3)],
+          ? ['rgba(212, 175, 55,', 'rgba(244, 63, 94,', 'rgba(243, 198, 105,'][Math.floor(Math.random() * 3)]
+          : ['rgba(184, 134, 11,', 'rgba(225, 29, 72,', 'rgba(212, 175, 55,'][Math.floor(Math.random() * 3)],
         alpha: isDark ? Math.random() * 0.35 + 0.15 : Math.random() * 0.25 + 0.1
       });
     }
@@ -90,7 +90,7 @@ export default function BackgroundCanvas({ theme = 'dark' }) {
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             const lineAlpha = (1 - dist2 / 100) * (isDark ? 0.12 : 0.08);
-            ctx.strokeStyle = `rgba(99, 102, 241, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(212, 175, 55, ${lineAlpha})`;
             ctx.lineWidth = 0.7;
             ctx.stroke();
           }

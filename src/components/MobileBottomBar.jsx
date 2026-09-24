@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home, FolderGit2, Briefcase, Mail, FileDown, Sparkles } from 'lucide-react';
+import { Home, FolderGit2, Briefcase, Mail, FileDown } from 'lucide-react';
 
 export default function MobileBottomBar({ onOpenResume }) {
   const [activeSection, setActiveSection] = useState('home');
@@ -47,7 +47,7 @@ export default function MobileBottomBar({ onOpenResume }) {
         WebkitBackdropFilter: 'blur(20px)',
         borderRadius: '20px',
         border: '1px solid var(--border-hover)',
-        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(16, 185, 129, 0.15)',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(244, 63, 94, 0.2)',
         display: 'none',
         alignItems: 'center',
         justifyContent: 'space-around',
@@ -70,8 +70,8 @@ export default function MobileBottomBar({ onOpenResume }) {
               gap: '2px',
               padding: '6px 12px',
               borderRadius: '12px',
-              color: isActive ? '#10b981' : 'var(--text-muted)',
-              background: isActive ? 'rgba(16, 185, 129, 0.12)' : 'transparent',
+              color: isActive ? '#f43f5e' : 'var(--text-muted)',
+              background: isActive ? 'rgba(244, 63, 94, 0.12)' : 'transparent',
               textDecoration: 'none',
               fontSize: '0.68rem',
               fontWeight: isActive ? '700' : '500',
@@ -95,13 +95,13 @@ export default function MobileBottomBar({ onOpenResume }) {
           gap: '2px',
           padding: '6px 12px',
           borderRadius: '12px',
-          background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
+          background: 'linear-gradient(135deg, #d4af37 0%, #f43f5e 100%)',
           color: '#ffffff',
           border: 'none',
           fontSize: '0.68rem',
           fontWeight: '700',
           cursor: 'pointer',
-          boxShadow: '0 2px 10px rgba(16, 185, 129, 0.4)'
+          boxShadow: '0 2px 10px rgba(212, 175, 55, 0.4)'
         }}
         title="Download Resume"
       >
