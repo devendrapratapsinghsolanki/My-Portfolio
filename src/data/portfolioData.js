@@ -12,7 +12,7 @@ export const portfolioData = {
     ],
     email: "pratpdevendr@gmail.com",
     phone: "+91-8869077580",
-    location: "Bareilly (U.P.), India",
+    location: "Noida (Uttar Pradesh), India",
     portfolioUrl: "https://devendrapratap.in",
     displayUrl: "devendrapratap.in",
     github: "https://github.com/devendrapratapsinghsolanki",

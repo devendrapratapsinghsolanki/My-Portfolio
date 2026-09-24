@@ -63,7 +63,7 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
           <Logo />
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation Links */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '4px' }} className="desktop-nav">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
@@ -76,8 +76,9 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
                   borderRadius: '8px',
                   fontSize: '0.86rem',
                   fontWeight: isActive ? '700' : '500',
-                  color: isActive ? '#f43f5e' : 'var(--text-muted)',
-                  background: isActive ? 'rgba(244, 63, 94, 0.1)' : 'transparent',
+                  color: isActive ? 'var(--text-main)' : 'var(--text-muted)',
+                  background: isActive ? 'var(--bg-pill)' : 'transparent',
+                  border: isActive ? '1px solid var(--border-subtle)' : '1px solid transparent',
                   textDecoration: 'none',
                   transition: 'all 0.15s ease'
                 }}
@@ -88,8 +89,8 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
           })}
         </nav>
 
-        {/* Right Actions: ONLY ONE Resume button and Theme toggle */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }} className="desktop-nav">
+        {/* Desktop Controls (SINGLE Mode Toggle + SINGLE Resume Button) */}
+        <div style={{ alignItems: 'center', gap: '10px' }} className="desktop-controls">
           <button
             onClick={toggleTheme}
             className="theme-toggle-btn"
@@ -109,8 +110,8 @@ export default function Navbar({ onOpenResume, theme, toggleTheme }) {
           </button>
         </div>
 
-        {/* Mobile top controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }} className="mobile-toggle-btn">
+        {/* Mobile Top Controls (Only 1 Mode toggle on mobile top bar) */}
+        <div style={{ alignItems: 'center', gap: '8px' }} className="mobile-controls">
           <button
             onClick={toggleTheme}
             className="theme-toggle-btn"

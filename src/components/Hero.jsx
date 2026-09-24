@@ -70,8 +70,8 @@ export default function Hero({ onOpenResume }) {
                 gap: '6px',
                 padding: '4px 14px',
                 borderRadius: '9999px',
-                background: 'rgba(212, 175, 55, 0.12)',
-                border: '1px solid rgba(212, 175, 55, 0.3)',
+                background: 'rgba(201, 173, 167, 0.15)',
+                border: '1px solid var(--border-subtle)',
                 marginBottom: '18px'
               }}
             >
@@ -80,11 +80,11 @@ export default function Hero({ onOpenResume }) {
                   width: '7px',
                   height: '7px',
                   borderRadius: '50%',
-                  background: '#d4af37',
-                  boxShadow: '0 0 8px #d4af37'
+                  background: '#C9ADA7',
+                  boxShadow: '0 0 8px #C9ADA7'
                 }}
               />
-              <span style={{ fontSize: '0.8rem', fontWeight: '700', color: '#d4af37', letterSpacing: '0.02em' }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--text-main)', letterSpacing: '0.02em' }}>
                 {personal.availability}
               </span>
             </div>
@@ -120,7 +120,7 @@ export default function Hero({ onOpenResume }) {
                 style={{
                   fontSize: '1.15rem',
                   fontWeight: '700',
-                  borderRight: '2px solid #f43f5e',
+                  borderRight: '2px solid #C9ADA7',
                   paddingRight: '4px'
                 }}
               >
@@ -207,25 +207,25 @@ export default function Hero({ onOpenResume }) {
                 style={{ cursor: 'pointer', background: 'transparent' }}
                 title="Click to copy email"
               >
-                {copiedEmail ? <Check size={14} color="#d4af37" /> : <Mail size={14} />}
+                {copiedEmail ? <Check size={14} color="#C9ADA7" /> : <Mail size={14} />}
                 <span>{copiedEmail ? 'Copied!' : personal.email}</span>
               </button>
             </div>
           </div>
 
-          {/* Right: Circular Chic Glowing Profile */}
+          {/* Right: Circular Urban Chic Glowing Profile */}
           <div className="hero-profile-container" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
             <div style={{ position: 'relative', width: '280px', height: '280px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               
-              {/* Outer Decorative Gradient Ring (Gold & Sensational Pink Glow) */}
+              {/* Outer Decorative Gradient Ring (Moody Twilight & Almond Glow) */}
               <div
                 style={{
                   position: 'absolute',
                   inset: '-14px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.45) 0%, rgba(244, 63, 94, 0.45) 100%)',
+                  background: 'linear-gradient(135deg, rgba(74, 78, 105, 0.5) 0%, rgba(201, 173, 167, 0.5) 100%)',
                   filter: 'blur(12px)',
-                  opacity: 0.8,
+                  opacity: 0.85,
                   zIndex: 0
                 }}
               />
@@ -238,8 +238,8 @@ export default function Hero({ onOpenResume }) {
                   height: '100%',
                   borderRadius: '50%',
                   padding: '5px',
-                  background: 'linear-gradient(135deg, #d4af37 0%, #f43f5e 100%)',
-                  boxShadow: '0 12px 35px rgba(212, 175, 55, 0.35)',
+                  background: 'linear-gradient(135deg, #4A4E69 0%, #C9ADA7 50%, #9A8C98 100%)',
+                  boxShadow: '0 12px 35px rgba(34, 34, 59, 0.45)',
                   zIndex: 1
                 }}
               >
@@ -285,7 +285,7 @@ export default function Hero({ onOpenResume }) {
                   zIndex: 2
                 }}
               >
-                <Code2 size={15} color="#d4af37" />
+                <Code2 size={15} color="#C9ADA7" />
                 <span style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-main)' }}>
                   Next.js & React
                 </span>
@@ -310,7 +310,7 @@ export default function Hero({ onOpenResume }) {
                   zIndex: 2
                 }}
               >
-                <Database size={15} color="#f43f5e" />
+                <Database size={15} color="#9A8C98" />
                 <span style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-main)' }}>
                   PostgreSQL & Prisma
                 </span>
